@@ -1,9 +1,9 @@
 .project-card{
     padding: 20px;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--border-color);
     border-radius: 10px;
     margin: 10px;
-    width: 300px;
+    width: 25%;
     height: 400px;
     /* min-height: 400px; */
     transition: 0.7s ease;

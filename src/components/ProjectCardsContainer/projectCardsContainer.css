@@ -1,7 +1,8 @@
 .project-cards-container{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     /* justify-content: flex-start; */
     margin: auto;
-    gap: 40px;
+    /* gap: 40px; */
 }

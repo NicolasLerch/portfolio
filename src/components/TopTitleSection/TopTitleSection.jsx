@@ -4,7 +4,7 @@ import './topTitleSection.css'
 export default function TopTitleSection () {
 
     return (
-        <div className="top-title-section shadowed">
+        <div className="top-title-section">
             <div className="top-title-image-container">
                 <img src='/images/mainImage.webp' alt="main Image"></img>
             </div>

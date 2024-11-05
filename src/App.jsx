@@ -11,10 +11,11 @@ function App() {
   return (
     <div className="default-theme">
       <NavBar />
-      <TopTitleSection />
-      <IconsBar />
+      <TopTitleSection />      
       <h1>My Projects</h1>
       <ProjectCardsContainer />
+      <h1>My Skills</h1>
+      <IconsBar />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
