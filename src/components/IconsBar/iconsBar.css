@@ -1,0 +1,15 @@
+.icons-dynamic-bar{
+    margin: auto;
+    margin-top: 10px;
+    width: 80%;
+    
+}
+
+.icon{
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    border: 1px solid var(--text-color);
+    padding: 5px;
+    border-radius: 10px;
+}
