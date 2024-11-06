@@ -5,10 +5,8 @@ export default function TopTitleSection () {
 
     return (
         <div className="top-title-section">
-            <div className="top-title-image-container">
-                <img src='/images/mainImage.webp' alt="main Image"></img>
-            </div>
-            <div className="top-title-section-right">                
+            <div className="top-title-section-right">  
+            <img src='/images/mainImage.webp' alt="main Image"></img>              
                 <div className="title-container">
                     <h1>Hi! I'm Nicolas Lerch</h1>
                     <h1>Web Developer</h1>

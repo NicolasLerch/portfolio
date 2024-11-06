@@ -10,11 +10,13 @@
     width: 20%;
     align-content: center;
     align-items: center;
+    font-size: 2vw;
     .logo{
         font-size: 3vw;
         margin: 5px;
         h1{
             margin: 5px;
+            font-size: 4vw;
         }
     }
     .web-title{

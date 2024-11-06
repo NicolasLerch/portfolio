@@ -1,0 +1,22 @@
+.skill-card{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+}
+
+.description-container{
+    display: flex;
+}
+
+.img-container{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-description{
+    font-size: 1.5vw;
+    /* width: 65%; */
+    margin-left: 20px;
+}

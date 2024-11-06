@@ -10,6 +10,33 @@
     background-color: var(--bg-color);
 }
 
+.top-title-section img{
+    width: 30%;
+}
+
+@media (max-width: 799px){
+    .top-title-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .top-title-section img{
+        width: 100%;
+        border-radius: 10px;
+        order: 1;
+    }    
+    .top-title-section-right{
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+    }
+    .links-container{
+        order: 2;
+    }
+    .top-title-section-right{
+        width: 100%;
+    }
+}
+
 .top-title-image-container{
     width: 55% !important;
     text-align: center;

@@ -20,7 +20,6 @@ export default function NavBar () {
             <button className="hire-me-button">
                 Hire me
             </button>
-           
         </div>
     )
 }
