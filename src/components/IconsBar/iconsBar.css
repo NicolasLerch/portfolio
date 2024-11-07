@@ -1,19 +1,19 @@
 .icons-dynamic-bar{
     display: flex;
-    justify-content: center;
-    margin: auto;
-    margin-top: 40px;
-    width: 80%;    
+    
+    white-space: nowrap;
+  position: relative;
+  animation: move 10s linear infinite;
 }
 
 .icon{
     height: 60px;
-    width: 60px;
-    margin: 0 10px;
-    border: 1px solid var(--border-color);
-    padding: 5px;
-    border-radius: 10px;
-    transition: 0.3s;
+  width: 60px;
+  margin: 0 10px;
+  padding: 5px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  transition: transform 0.3s;
     &:hover{
         cursor: pointer;
         background-color: var(--bg-hover);
@@ -21,6 +21,17 @@
     }
 }
 
-.icon-container{
+.icon-container {
     display: flex;
+    align-items: center;
+  }
+
+
+@keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Mueve la mitad del contenido */
+    }
 }

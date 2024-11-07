@@ -6,3 +6,18 @@
     margin: auto;
     /* gap: 40px; */
 }
+
+@media (max-width: 799px){
+    .project-cards-container{
+        width: 100%;
+    }
+    .project-card{
+        width: 38%;
+    }
+}
+
+@media (max-width: 499px){
+    .project-card{
+        width: 90%;
+    }
+}

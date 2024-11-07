@@ -90,20 +90,20 @@ export default function IconsBar() {
   return (
     <div className="skills-container">
       <div className="icons-dynamic-bar">
-        {skills.map((skill, index) => (
-          <div
+      {[...skills,...skills].map((skill, index) => (
+        <div
             className="icon-container"
             key={`skill-${index}`}
             onClick={() => handleClick(skill)}
-          >
+        >
             <img
-              src={skill.icon}
-              alt={skill.icon}
-              key={`icon-${index}`}
-              className="icon"
+                src={skill.icon}
+                alt={skill.title}
+                key={`icon-${index}`}
+                className="icon"
             />
-          </div>
-        ))}
+        </div>
+    ))}
       </div>
       <SkillsDescription
         title={selectedSkill.title}
