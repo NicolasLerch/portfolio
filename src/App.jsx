@@ -5,6 +5,7 @@ import NavBar from './components/NavBar/NavBar'
 import IconsBar from './components/IconsBar/IconsBar'
 import ProjectCardsContainer from './components/ProjectCardsContainer/ProjectCardsContainer';
 import ContactCard from './components/ContactCard/ContactCard'
+import BurgerMenu from './components/BurgerMenu/BurgerMenu';
 
 function App() {
   const [count, setCount] = useState(0);

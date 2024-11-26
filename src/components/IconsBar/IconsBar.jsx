@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import mySQL from "../../assets/mysql.png";
 import html from "../../assets/html.png";
@@ -81,37 +81,82 @@ const skills = [
 ];
 
 export default function IconsBar() {
-  const [selectedSkill, setSelectedSkill] = useState(skills[0]); // Estado inicial con el primer skill
+  const [selectedSkill, setSelectedSkill] = useState(skills[0]);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  const wrapperRef = useRef(null);
+  const iconsBarRef = useRef(null);
+
 
   const handleClick = (skill) => {
     setSelectedSkill(skill); // Actualiza el skill seleccionado
   };
 
+  useEffect(() => {
+    // Stop the animation after 10 seconds
+    const timer = setTimeout(() => {
+      iconsBarRef.current.style.animation = "none";
+    }, 10000);
+    return () => clearTimeout(timer);
+  }, []);
+
+
+   // Drag start
+   const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - wrapperRef.current.offsetLeft);
+    setScrollLeft(wrapperRef.current.scrollLeft);
+  };
+
+  // Dragging
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    const x = e.pageX - wrapperRef.current.offsetLeft;
+    const walk = (x - startX) * 1; // Adjust scroll speed
+    wrapperRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Drag end
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
   return (
     <div className="skills-container">
-      <div className="icons-dynamic-bar">
-      {[...skills,...skills].map((skill, index) => (
+  <div
+        className="wrapper"
+        ref={wrapperRef}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+    <div className="icons-dynamic-bar" ref={iconsBarRef}>
+      {[...skills, ...skills].map((skill, index) => (
         <div
-            className="icon-container"
-            key={`skill-${index}`}
-            onClick={() => handleClick(skill)}
+          className="icon-container"
+          key={`skill-${index}`}
+          onClick={() => handleClick(skill)}
         >
-            <img
-                src={skill.icon}
-                alt={skill.title}
-                key={`icon-${index}`}
-                className="icon"
-            />
+          <img
+            src={skill.icon}
+            alt={skill.title}
+            className="icon"
+          />
         </div>
-    ))}
-      </div>
-      <SkillsDescription
-        title={selectedSkill.title}
-        description={selectedSkill.description}
-        description2={selectedSkill.description2}
-        img1={selectedSkill.img1}
-        img2={selectedSkill.img2}
-      />
+      ))}
     </div>
+  </div>
+  <SkillsDescription
+    title={selectedSkill.title}
+    description={selectedSkill.description}
+    description2={selectedSkill.description2}
+    img1={selectedSkill.img1}
+    img2={selectedSkill.img2}
+  />
+</div>
+
   );
 }

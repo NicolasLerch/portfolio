@@ -1,37 +1,61 @@
-.icons-dynamic-bar{
-    display: flex;
-    
-    white-space: nowrap;
+.icons-dynamic-bar {
+  display: flex;
+  white-space: nowrap;
   position: relative;
   animation: move 10s linear infinite;
+  height: 80px;
+  transition: transform 0.2s ease;
+  will-change: transform;
 }
 
-.icon{
-    height: 60px;
+.icon {
+  height: 60px;
   width: 60px;
   margin: 0 10px;
   padding: 5px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   transition: transform 0.3s;
-    &:hover{
-        cursor: pointer;
-        background-color: var(--bg-hover);
-        transform: scale(1.1);
-    }
+  -webkit-user-drag: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--bg-hover);
+    transform: scale(1.1);
+  }
 }
 
 .icon-container {
-    display: flex;
-    align-items: center;
-  }
+  display: flex;
+  align-items: center;
+}
 
+/* Wrapper to hide overflow and contain animation */
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  user-select: none;
+  cursor: grab;
+  &:active{
+    cursor: grabbing;
+  }
+  @media (min-width: 799px){
+    width: 800px;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+}
 
 @keyframes move {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%); /* Mueve la mitad del contenido */
-    }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+    /* Mueve la mitad del contenido */
+  }
 }

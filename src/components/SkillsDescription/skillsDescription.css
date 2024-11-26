@@ -18,5 +18,13 @@
 .skill-description{
     font-size: 1.5vw;
     /* width: 65%; */
+    margin-top: 0px;
     margin-left: 20px;
+}
+
+@media (max-width: 999px){
+    .skill-description{
+        font-size: 2.5vw;
+        margin-top: 0px;
+    }
 }
